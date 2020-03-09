@@ -1,8 +1,17 @@
-<div class="card" style="width: 18rem;margin:10px">
-      <div class="card-body" >
-        <h5 class="card-title"><%= link_to "#{i.title}", item_path(i.id) %></h5>
-        <p class="card-text"><%= "#{i.description}" %></p>
-        <p style="font-style:italic">Posté à <%= i.created_at%></p>
-        <%= link_to "Acheter", item_path(i.id), class:"btn btn-primary" %>
-      </div>
-</div>
+
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <%= link_to "#{image_tag(i.image_url, :alt =>  "alt text", :class =>"card-img-top")}".html_safe, item_path(i.id) %>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <%= link_to "#{i.title}", item_path(i.id) %>
+                </h4>
+                <h5><%= "#{i.price}" %></h5>
+                <p class="card-text"><%= "#{i.description}" %></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small> <%= link_to "Ajouter au panier", item_path(i.id) %>
+              </div>
+            </div>
+          </div>
