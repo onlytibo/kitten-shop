@@ -35,7 +35,7 @@ gem 'devise'
 gem 'bootstrap'
 gem 'sendgrid-ruby'
 gem 'dotenv-rails'
-
+gem 'popper_js', '~> 1.16.0'
 ####
 
 # Use ActiveStorage variant

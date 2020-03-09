@@ -246,6 +246,7 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  popper_js (~> 1.16.0)
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
