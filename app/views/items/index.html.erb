@@ -1,0 +1,12 @@
+ <% @items.each do |i| %>
+ 
+  <div class="card" style="width: 18rem;margin:10px">
+      <div class="card-body" >
+        <h5 class="card-title"><%= link_to "#{i.title}", item_path(i.id) %></h5>
+        <p class="card-text"><%= "#{i.description}" %></p>
+        <p style="font-style:italic">Posté à <%= i.created_at%></p>
+        <%= link_to "Acheter", item_path(i.id), class:"btn btn-primary" %>
+      </div>
+    </div>
+
+ <%end%>
