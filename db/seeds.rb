@@ -8,6 +8,4 @@
 
 User.destroy_all
 
-2.times do 
-  User.create(email: 'bojuaugustin@gmail.com', name: "Augustin")
-end
+User.create(email: 'User_test1@yopmail.com', name: "Augustin", encrypted_password: "123456")
