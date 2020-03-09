@@ -35,7 +35,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'devise'
 gem 'bootstrap', '~> 4.4.1'
 
-
 ####
 
 # Use ActiveStorage variant
