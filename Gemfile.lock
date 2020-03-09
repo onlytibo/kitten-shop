@@ -237,11 +237,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-<<<<<<< HEAD
-  dotenv
-=======
   dotenv-rails
->>>>>>> dev
   faker
   jbuilder (~> 2.5)
   letter_opener
