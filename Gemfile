@@ -33,6 +33,8 @@ gem 'stripe'
 gem 'faker'
 gem 'devise'
 gem 'bootstrap'
+gem 'dotenv'
+gem 'sendgrid-ruby'
 
 ####
 
