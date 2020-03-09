@@ -7,5 +7,30 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Item.destroy_all
 
-User.create(email: 'User_test1@yopmail.com', name: "Augustin", encrypted_password: "123456")
+User.create(
+  email: "user@yopmail.com",
+  encrypted_password: "123456",
+  name: Faker::Name.last_name
+)
+puts "User 1"
+
+User.create(
+  email: "user2@yopmail.com",
+  encrypted_password: "123456",
+  name: Faker::Name.last_name
+)
+puts "User 2"
+
+i = 1;
+20.times do
+  Item.create(
+    title: Faker::Name.first_name,
+    description: "Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.",
+    price: rand(5..30),
+    image_url: "",
+  )
+  puts "Item #{i} created"
+  i += 1;
+end
