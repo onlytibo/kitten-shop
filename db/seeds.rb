@@ -12,14 +12,16 @@ Item.destroy_all
 User.create(
   email: "user@yopmail.com",
   encrypted_password: "123456",
-  name: Faker::Name.last_name
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name
 )
 puts "User 1"
 
 User.create(
   email: "user2@yopmail.com",
   encrypted_password: "123456",
-  name: Faker::Name.last_name
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name
 )
 puts "User 2"
 
