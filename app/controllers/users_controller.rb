@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
 
+
 def update_with_password(params, *options)
     current_password = params.delete(:current_password)
 
