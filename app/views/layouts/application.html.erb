@@ -36,14 +36,15 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", user_path(current_user) , class:"dropdown-item" %>
-              
+
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
 
               Voici ton email : <%= current_user.email %>
-    
-              <%= link_to "Edit email / password", edit_user_registration_path %>              
+
+              <%= link_to "Edit email / password", edit_user_registration_path %>
           </li>
         </ul>
+        <div><%= link_to "Cart", user_path(current_user), :class => "btn btn-info" %></div>
       </div>
         <% else %>
           <!-- DROPDOWN NOT LOGIN -->

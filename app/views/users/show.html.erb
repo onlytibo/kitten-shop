@@ -1,1 +1,10 @@
-eza
+<h1><%= @current_user.first_name %> <%= @current_user.last_name %>'s profile</h1>
+
+<main class="container">
+<div class="card" >
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Email : <%= @current_user.email %></li>
+  </ul>
+</div>
+  <div style="margin-top: 20px;"><%= link_to "Back home", root_path, :class => "btn btn-info" %></div>
+</main>
