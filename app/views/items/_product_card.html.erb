@@ -2,10 +2,14 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <%= link_to "#{image_tag(i.image_url, :alt =>  "alt text", :class =>"card-img-top")}".html_safe, item_path(i.id) %>
+              <%
+=begin%>
+ <%= link_to "#{image_tag(i.img_link, :alt =>  "alt text", :class =>"card-img-top")}".html_safe, item_path(i.id) %> 
+<%
+=end%>
               <div class="card-body">
                 <h4 class="card-title">
-                  <%= link_to "#{i.title}", item_path(i.id) %>
+                  <%= link_to "#{i.name}", item_path(i.id) %>
                 </h4>
                 <h5><%= "#{i.price}" %></h5>
                 <p class="card-text"><%= "#{i.description}" %></p>
