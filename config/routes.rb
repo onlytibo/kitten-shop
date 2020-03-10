@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :items
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :new, :create, :edit, :update], path: 'utilisateurs' do
+    resources :carts, only: [:show], path: 'paniers'
+    resources :orders, only: [:new, :show, :create], path: 'commandes'
+    resources :avatars, only: [:create]
+  end
   resources :carts
   resources :cart_items
 end
