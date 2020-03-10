@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :items
+  resources :users, only: [:show, :index]
 
 end
