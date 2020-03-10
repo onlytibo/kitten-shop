@@ -31,7 +31,6 @@ i = 1;
     name: Faker::Name.first_name,
     description: "Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.",
     price: rand(5..30),
-    image_url: "http://placehold.it/900x350",
   )
   puts "Item #{i} created"
   i += 1;
