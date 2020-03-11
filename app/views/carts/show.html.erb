@@ -1,3 +1,16 @@
-coucou
+<div class="container">
 
-PANIER
+  <% @cart_items.sort.each do |cart_item| %>
+    <%= cart_item.item.name %><br />
+    <small><%= cart_item.item.description %></small><br />
+    <%= cart_item.item.price %>€<br />
+    Qté x<%= @quantity[cart_item.item.id] %><br />
+    <%= link_to "Delete Item", {:controller => :cart_items, :id => cart_item.item.id, :action => :destroy }, :method => :delete %> 
+
+    <hr>
+  <%end%>
+
+  TOTAL PANIER <%= @total %>€
+
+</div>
+

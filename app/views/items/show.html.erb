@@ -24,6 +24,14 @@
             4.0 stars
           </div>
         </div>
+
+        <%# <%= link_to "Ajouter au panier", { :controller => :cart_items, :action => :create, :url => :root_path }, { class: "btn btn-primary btn-lg", style: "width: 100%;" } %>
+
+        <%= link_to "Ajouter au panier", {:controller => :cart_items, :id => @item.id, :action => :create }, :method => :post %> 
+
+
+
+    
         <!-- /.card -->
 
         <div class="card card-outline-secondary my-4">
