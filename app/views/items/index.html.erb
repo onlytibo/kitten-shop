@@ -48,23 +48,12 @@
           <div class="container p-5">
 
     <h2 class="text-center my-5" id="ici">La sélection du mois</h2>
+
     <div class="row">
-      <% @items.each do |item| %>
-        <div class="col-md-4">
-          <div class="card mb-4 text-center">
-            <div class="card-body">
-              <h5 class="h3 text-black"><%= item.name %></h5>
-              <p class="item-price text-black h2 text-muted font-weight-bold"><%= item.price %> €</p>
-              <p class=""> <%= item.description %> </p>
-              <%= link_to "En savoir plus", item_path(item), class: "btn btn-light w-100" %>
-              <%if user_signed_in? == true%>
-                <%= link_to "Ajouter au panier", cart_items_path(cart_id: Cart.where(user_id: current_user.id).last.id, item_id: item.id, quantity: 1), class:"btn btn-outline-primary w-100", method: "post" %>
-              <%end%>
-            </div>
-          </div>
+          <% @items.each do |i| %>
+            <%= render 'items/product_card', i: i %>
+          <%end%>
         </div>
-      <% end %>
-    </div>
         <!-- /.row -->
 
       </div>
