@@ -7,4 +7,14 @@
   </ul>
 </div>
   <div style="margin-top: 20px;"><%= link_to "Back home", root_path, :class => "btn btn-info" %></div>
+
+  <div>
+    <h3>Avatar</h3>
+    <%if @user.avatar.attached?%>
+          <%= image_tag @user.avatar, alt: 'avatar' %>
+        <%else%>
+          <p>Oui oui</p>
+        <%end%>
+
+  </div>
 </main>
