@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   
 
+  resources :charges
+
+
   # resources :cart_items, only: [:new, :create, :destroy], path: 'contenu-panier'
 
   # resources :carts

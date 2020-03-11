@@ -12,18 +12,29 @@ class OrdersController < ApplicationController
     # on créer une order
     @order = Order.new(user:current_user)
     @cart = Cart.where(user_id: current_user.id)
+    id = params[:user_id]
 
-    # on copie les items du cart dans l'order item
+    charge_error = nil
+
     @cart_items = CartItems.where(cart_id:@cart)
 
     @cart_items.each do |c|
-      @order_item = OrderItem.new(order:@order,item:c.item)
-      if @order_item.save
-        puts "O-K"
-      else
-        puts @order_item.errors.full_messages
-      end
+      @order_item = OrderItem.create(order:@order,item:c.item)
     end
+
+    @cart = Cart.where(user_id:id)
+    @amount = @order.total_amount_order(@cart_items)
+    @amount = @amount.to_i
+    
+    puts "================================================="
+    puts "================================================="
+    puts "================================================="
+    print @amount
+    puts "€"
+    puts "================================================="
+    puts "================================================="
+    puts "================================================="
+
 
     unless @order_item.nil?
       if @order.save

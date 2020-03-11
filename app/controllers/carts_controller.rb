@@ -5,6 +5,13 @@ class CartsController < ApplicationController
 
     @cart_items = CartItems.where(cart_id: id).sort.uniq { |c| c.item_id }
     @total = Cart.total_cart(id)
+
+    if @cart_items.nil?
+      @empty = true
+    else
+      @empty = false
+    end
+
   end
 
   def create
