@@ -1,0 +1,22 @@
+<div class="col-lg-4 col-md-6 mb-4">
+        
+          <div class="card mb-4 text-center">
+            <div class="card-body">
+              <h5 class="h3 text-black"><%= i.name %></h5>
+              <p class="item-price text-black h2 text-muted font-weight-bold"><%= i.price %> €</p>
+              <p class=""> <%= i.description %> </p>
+              <%= link_to "En savoir plus", item_path(i.id), class: "btn btn-light w-100" %>
+              <%if user_signed_in? == true%>
+                <%= link_to "Ajouter au panier", {:controller => :cart_items, :id => i.id, :action => :create }, :method => :post, class:"btn btn-outline-primary w-100", method: "post" %>
+              <%end%>
+              </div>
+            </div>
+</div>
+   
+        
+
+              <%
+=begin%>
+ <%= link_to "#{image_tag(i.img_link, :alt =>  "alt text", :class =>"card-img-top")}".html_safe, item_path(i.id) %>
+<%
+=end%>

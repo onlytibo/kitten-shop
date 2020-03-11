@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-6">
+      <div class="container">
+      <div class="border mb-5 p-5">
+        <h2 class="h3">Espace personnel</h2>
+        <hr>
+        <!-- <div class="d-inline-block rounded-circle overflow-auto mb-4" style="height: 200px; width: 200px;"></div> -->
+        <h4>Prénom : <%= @user.last_name %></h4>
+        <h4>Nom : <%= @user.first_name %></h4>
+        <h4>Email : <%= @user.email %></h4>
+        <h5>Avatar actuel</h5>
+        <%if @user.avatar.attached?%>
+          <%= image_tag @user.avatar, alt: 'avatar' %>
+        <%else%>
+          <p>Avatar indisponible</p>
+        <%end%>
+        <%= link_to "Modifier mes informations", edit_user_registration_path, class:"btn btn-outline-primary m-5 " %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
