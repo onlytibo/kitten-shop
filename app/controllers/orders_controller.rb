@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
     # on copie les items du cart dans l'order item
     @cart_items = CartItems.where(cart_id:@cart)
-    
+
     @cart_items.each do |c|
       @order_item = OrderItem.new(order:@order,item:c.item)
       if @order_item.save
