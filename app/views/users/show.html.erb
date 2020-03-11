@@ -1,20 +1,24 @@
-<h1><%= @current_user.first_name %> <%= @current_user.last_name %>'s profile</h1>
+<div class="container">
+  <div class="row">
 
-<main class="container">
-<div class="card" >
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Email : <%= @current_user.email %></li>
-  </ul>
-</div>
-  <div style="margin-top: 20px;"><%= link_to "Back home", root_path, :class => "btn btn-info" %></div>
-
-  <div>
-    <h3>Avatar</h3>
-    <%if @user.avatar.attached?%>
+    <div class="col-6">
+      <div class="container">
+      <div class="border mb-5 p-5">
+        <h2 class="h3">Espace personnel</h2>
+        <hr>
+        <!-- <div class="d-inline-block rounded-circle overflow-auto mb-4" style="height: 200px; width: 200px;"></div> -->
+        <h4>Prénom : <%= @user.last_name %></h4>
+        <h4>Nom : <%= @user.first_name %></h4>
+        <h4>Email : <%= @user.email %></h4>
+        <h5>Avatar actuel</h5>
+        <%if @user.avatar.attached?%>
           <%= image_tag @user.avatar, alt: 'avatar' %>
         <%else%>
-          <p>Oui oui</p>
+          <p>Avatar indisponible</p>
         <%end%>
-
+        <%= link_to "Modifier mes informations", edit_user_registration_path, class:"btn btn-outline-primary m-5 " %>
+        </div>
+      </div>
+    </div>
   </div>
-</main>
+</div>
