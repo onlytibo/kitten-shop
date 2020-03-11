@@ -1,21 +1,13 @@
 
 
 <div class="px-4 px-lg-0">
-  <!-- For demo purpose -->
-  <div class="container text-white py-5 text-center">
-    <h1 class="display-4">Bootstrap 4 shopping cart</h1>
-    <p class="lead mb-0">Build a fully structred shopping cart page using Bootstrap 4. </p>
-    <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets" class="text-white font-italic">
-            <u>Bootstrapious</u></a>
-    </p>
-  </div>
-  <!-- End -->
+
 
   <div class="pb-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-
+<% if @total > 0 %>
 
           <!-- Shopping cart table -->
           <div class="table-responsive">
@@ -80,6 +72,7 @@
         </div>
       </div>
 
+
       <div class="row py-5 p-4 bg-white rounded shadow-sm">
         <div class="col-lg-6">
           <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
@@ -130,11 +123,17 @@
         // have more than 1 button of that class
         document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
         </script>
-        <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</button>
+          <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</button>
 <% end %>
 
           </div>
         </div>
+<% else %>
+<hr>
+<i>Ton panier est vide :)...</i>
+<hr>
+<% end %>
+
       </div>
 
     </div>
