@@ -12,9 +12,13 @@ class UsersController < ApplicationController
 
     if current_user == @user
       @user = User.find_by(id:params[:id])
-    else 
+    else
       redirect_to root_path
     end
+  end
+
+  def create
+    @user.avatar.attach(params[:avatar])
   end
 
 
@@ -41,12 +45,12 @@ def update_with_password(params, *options)
 end
 
 
-  private 
+  private
 
   def set_current_user
     @user = User.find(params[:id])
   end
-  
+
   def set_current_id
     @id = params['id']
   end
@@ -55,6 +59,10 @@ end
     unless current_user
       redirect_to root_path
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password_digest, :avatar)
   end
 
 end

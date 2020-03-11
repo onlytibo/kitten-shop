@@ -9,10 +9,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :welcome_send
   after_create :create_cart_and_assign_to_current_user
-
+  has_one_attached :avatar
 
   # attr_accessor :cart
-  
+
   # def initialize(cart_id = Cart.create.id)
   #   super
   #   @cart = cart_id
