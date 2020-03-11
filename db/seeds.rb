@@ -28,8 +28,8 @@ puts "User 2"
 i = 1;
 20.times do
   Item.create(
-    name: Faker::Name.first_name,
-    description: "Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta ora maritima in Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera praetenturis provincialium et viatorum opibus pascebantur.",
+    name: Faker::DcComics.hero,
+    description: "Procedente igitur mox tempore cum adventicium nihil inveniretur.",
     price: rand(5..30),
   )
   puts "Item #{i} created"
