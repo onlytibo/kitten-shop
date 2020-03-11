@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
 
+  resources :charges
+
+
   # resources :cart_items, only: [:new, :create, :destroy], path: 'contenu-panier'
 
   # resources :carts

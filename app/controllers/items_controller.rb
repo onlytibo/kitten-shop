@@ -9,4 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.find(id)
   end
 
+  
+
 end

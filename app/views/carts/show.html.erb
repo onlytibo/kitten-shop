@@ -108,7 +108,31 @@
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong><%= @tax = "%.1f" % (@total - (@total * 100/120)) %>€</strong></li>
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="font-weight-bold"><%= @total %>€</h5>
-              </li><%= link_to "Procceed to checkout", {:controller => :orders, :action => :create }, :method => :post, class:"btn btn-dark rounded-pill py-2 btn-block"  %>
+              </li>
+              <%# <%= link_to "Procceed to checkout", {:controller => :orders, :action => :create }, :method => :post, class:"btn btn-dark rounded-pill py-2 btn-block"  %>
+
+<%= form_tag user_orders_path do %>
+  <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+  </article>
+<br>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-description="A month's subscription"
+      data-amount="<%=@total * 100%>"></script>
+
+      <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+        </script>
+        <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</button>
+<% end %>
+
           </div>
         </div>
       </div>
