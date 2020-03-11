@@ -68,7 +68,7 @@
                   <td class="border-0 align-middle"><strong><%= @quantity[cart_item.item.id] %></strong></td>
 
 
-                 <td class="border-0 align-middle"> <%= link_to "Delete Item", {:controller => :cart_items, :id => cart_item.item.id, class:"fa fa-trash", :action => :destroy }, :method => :delete %> </td>
+                 <td class="border-0 align-middle"> <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, {:controller => :cart_items, :id => cart_item.item.id, :action => :destroy }, :method => :delete %> </td>
                 </tr>
                 
                  <%end%> 

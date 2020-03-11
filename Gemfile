@@ -36,6 +36,7 @@ gem 'bootstrap'
 gem 'sendgrid-ruby'
 gem 'dotenv-rails'
 gem 'popper_js', '~> 1.16.0'
+gem "font-awesome-rails"
 ####
 
 # Use ActiveStorage variant
