@@ -12,6 +12,4 @@ class Cart < ApplicationRecord
     end
     return @total
   end
-
-
 end

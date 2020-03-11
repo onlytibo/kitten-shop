@@ -11,6 +11,12 @@
   <%end%>
 
   TOTAL PANIER <%= @total %>€
+<br>
+<br>
+<br>
+
+  <%= link_to "COMMANDER", {:controller => :orders, :action => :create }, :method => :post %>
+
 
 </div>
 
