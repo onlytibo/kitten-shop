@@ -24,6 +24,15 @@ User.create(
   last_name: Faker::Name.last_name
 )
 puts "User 2"
+#admin
+User.create(
+  email: "bojuaugustin44@gmail.com",
+  password: "123456",
+  first_name: "Augustin",
+  last_name: "Boju ADMIN",
+  is_admin: true
+)
+puts "ADMIN created"
 
 i = 1;
 20.times do
