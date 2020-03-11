@@ -51,18 +51,24 @@
 <%
 =end%>
                 <tr>
-                  <th scope="row" class="border-0">
+                 <% @cart_items.sort.each do |cart_item| %>
+                  <th scope="row" class="border-0">  
                     <div class="p-2">
+
                       <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-1_zrifhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                             
                       <div class="ml-3 d-inline-block align-middle">
-                       <% @cart_items.sort.each do |cart_item| %>
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"> <%= cart_item.item.name %> <br> <small><%= cart_item.item.description %></small><br /></a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                  
+                        <h5 class="mb-0"> <p class="text-dark d-inline-block align-middle"> <%= cart_item.item.name %> <br> 
+                        <small><%= cart_item.item.description %></small><br /></p></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Indoor Cat</span>
                       </div>
                     </div>
                   </th>
                   <td class="border-0 align-middle"><strong><%= cart_item.item.price %>€<br /></strong></td>
                   <td class="border-0 align-middle"><strong><%= @quantity[cart_item.item.id] %></strong></td>
-                  <%= link_to "Delete Item", {:controller => :cart_items, :id => cart_item.item.id, class:"fa fa-trash", :action => :destroy }, :method => :delete %> </td>
+
+
+                 <td class="border-0 align-middle"> <%= link_to "Delete Item", {:controller => :cart_items, :id => cart_item.item.id, class:"fa fa-trash", :action => :destroy }, :method => :delete %> </td>
                 </tr>
                 
                  <%end%> 
