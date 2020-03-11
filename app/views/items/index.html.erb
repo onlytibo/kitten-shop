@@ -1,6 +1,12 @@
 
   <!-- Page Content -->
   <div class="container">
+<% unless params[:new_order].nil? %>
+<div class="alert alert-success" role="alert"><%=params[:new_order]%></div>
+<% end %>
+<% unless params[:fail_new_order].nil? %>
+<div class="alert alert-warning" role="alert"><%=params[:fail_new_order]%></div>
+<% end %>
 
     <div class="row">
 
