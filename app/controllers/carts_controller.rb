@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
   def show
+    id = params[:id]
+    @quantity = CartItems.set_quantity_items_in_cart(id)
 
+    @cart_items = CartItems.where(cart_id: id).sort.uniq { |c| c.item_id }
+    @total = Cart.total_cart(id)
   end
 
   def create
@@ -10,5 +14,6 @@ class CartsController < ApplicationController
   end
 
   def destroy
+
   end
 end

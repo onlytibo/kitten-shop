@@ -2,13 +2,16 @@ class Cart < ApplicationRecord
   belongs_to :user
   has_many :cart_items
   has_many :items, through: :cart_items
-  # attr_accessor :user
 
-
-  # def initialize(user_id = User.last)
-  #   super
-  #   @user = user_id
-  # end
+  def self.total_cart(id)
+    @cart_items = CartItems.where(cart_id: id)
+    @total = 0
+    
+    @cart_items.each do |cart_item|
+      @total = @total + cart_item.item.price
+    end
+    return @total
+  end
 
 
 end
