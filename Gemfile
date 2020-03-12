@@ -38,6 +38,7 @@ gem 'dotenv-rails'
 gem 'popper_js', '~> 1.16.0'
 gem "font-awesome-rails"
 gem "aws-sdk-s3", require: false
+gem 'unsplash'
 ####
 
 # Use ActiveStorage variant
