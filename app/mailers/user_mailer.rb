@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
   def order_email(order)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
     @order = order
-
+    @order_items = @order.items
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = 'http://monsite.fr/login'
 
