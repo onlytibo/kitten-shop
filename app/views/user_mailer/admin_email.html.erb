@@ -6,5 +6,21 @@
   <body>
     <h1>User <%= @order.user.first_name %> vient de passer une commande</h1>
     <h2>La commande n° <%= @order.id %> </h2>
+
+        <p>Il a acheté ça :<br>
+<% @cart = Cart.find_by(user_id:@user)%>
+
+
+    <%@cart_items = CartItems.where(cart_id:@cart)%>
+
+      <% @cart_items.each do |item| %>
+        
+          <strong><%= item.item.name %></strong>, <%= item.item.description %>
+          <p><%= item.item.image_url %></p>
+
+        <hr>
+      <% end %>
+    <br>
+    <h3>Bisous</h3>
   </body>
 </html>
