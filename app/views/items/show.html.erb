@@ -5,7 +5,9 @@
       <div class="col-lg-3">
         <h1 class="my-4">Shop Name</h1>
         <div class="list-group">
+         <%if user_signed_in? == true%>
           <%= link_to "Ajouter au panier", {:controller => :cart_items, :id => @item.id, :action => :create }, :method => :post, class:"list-group-item" %>
+        <%                                   end %>
         </div>
       </div>
       <!-- /.col-lg-3 -->
