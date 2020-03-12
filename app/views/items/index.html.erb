@@ -20,7 +20,11 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
+           <div class="carousel-caption d-md-block text-light">
+              <h1>KIT YOUR KAT</h1>
+              </div>
             <div class="carousel-item active">
+           
                <%= image_tag("slide1.jpg", :alt =>  @items.first.name, :class =>"d-block img-fluid", style: "max-height: 500px")  %> 
             </div>
             <div class="carousel-item">
@@ -41,7 +45,7 @@
           </a>
         </div>
 </div>
-          <div class="container p-5">
+          <div class="container p-5 mb-5">
 
     <h2 class="text-center my-5" id="ici">La sélection du mois</h2>
 
