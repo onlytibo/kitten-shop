@@ -2,9 +2,11 @@
 ==========================================================
 
 Tu t'es inscrit sur monsite.fr en utilisant l'e-mail suivant : <%= @order.user.email %>.
-Voici <% @order.order_items.each do |cart_item| %>
-  <%= cart_item.item.name %>
-  <%= cart_item.item.description %>
+Voici <% @order_items.each do |cart_item| %>
+  <%= cart_item.name %>
+  <%= cart_item.description %>
+  <%= cart_item.item.img_link %>
+
 <% end %>
 
 Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
