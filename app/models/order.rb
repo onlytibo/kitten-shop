@@ -5,8 +5,9 @@ class Order < ApplicationRecord
   after_create :order_send
 
   def order_send
-    UserMailer.order_email(self).deliver_now
-    UserMailer.admin_email(self).deliver_now
+    @user = self.user_id
+    UserMailer.order_email(self, @user).deliver_now
+    UserMailer.admin_email(self, @user).deliver_now
   end
 
   def total_amount_order(order_items)

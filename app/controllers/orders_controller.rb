@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
   def create
     # on créer une order
+    
     @order = Order.new(user:current_user)
     @cart = Cart.find_by(user_id: current_user.id)
     id = params[:user_id]
