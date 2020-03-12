@@ -43,3 +43,19 @@
   <%= file_field_tag :avatar %>
   <%= submit_tag "mettre à jour" %>
 <% end %>
+<br>
+<br>
+<br>
+<h3>Mes commandes</h3>
+<% @user_order.each do |order| %>
+<hr>
+  <%= order.created_at %><br>
+  <% @order_items = OrderItem.where(order_id:order.id) %>
+  <% @order_items.each do |item|%>
+    <%= item.item.name %><br>
+    <%= item.item.description %><br>
+    <%= item.item.price %><br>
+  <%end%>
+
+<%end%>
+<hr>
