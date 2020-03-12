@@ -26,10 +26,10 @@ User.create(
 puts "User 2"
 #admin
 User.create(
-  email: "bojuaugustin44@gmail.com",
+  email: "useradmin@gmail.com",
   password: "123456",
-  first_name: "Augustin",
-  last_name: "Boju ADMIN",
+  first_name: "AD",
+  last_name: "MIN",
   is_admin: true
 )
 puts "ADMIN created"
