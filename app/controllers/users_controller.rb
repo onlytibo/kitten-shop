@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     else
       redirect_to root_path
     end
+
+    @user_order = Order.where(user_id:@user.id)
+    
+
+
   end
 
   def create
