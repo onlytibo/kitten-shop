@@ -26,7 +26,7 @@
 <%
 =end%>
 
-
+<div class="container">
 <h1>Page Profil</h1>
 
 <p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
@@ -44,18 +44,87 @@
   <%= submit_tag "mettre à jour" %>
 <% end %>
 <br>
-<br>
-<br>
-<h3>Mes commandes</h3>
-<% @user_order.each do |order| %>
-<hr>
-  <%= order.created_at %><br>
-    <% @order_items = OrderItem.where(order_id:order.id) %>
-    <% @order_items.each do |item|%>
-      <%= item.item.name %><br>
-      <%= item.item.description %><br>
-      <%= item.item.price %><br>
-  <%end%>
+</div>
 
-<%end%>
-<hr>
+
+
+<div class="px-4 px-lg-0">
+
+
+  <div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+    <h2 class="mb-5">Toutes mes commandes</h2>
+
+
+          
+              
+
+                
+                 <% @user_order.each do |order| %>
+                 <!-- Shopping cart table -->
+                           <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light col-7">
+                    <div class="p-2 px-3 text-uppercase">Commande du <%= order.created_at %></div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light col-5">
+                    <div class="py-2 text-uppercase">
+                    
+                      
+
+
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+                 <tbody>
+                 
+    <% @order_items = OrderItem.where(order_id:order.id) %>
+
+                <% @order_items.each do |item|%>
+                <tr>
+                            <th scope="row" class="border-0 col-7">  
+                              <div class="p-2">
+                                <%= image_tag(item.item.image_url, :alt => item.item.name, :class =>"img-fluid rounded shadow-sm thumb-profil", style: "width='70'")  %>        
+                                <div class="ml-3 d-inline-block align-middle">
+                            
+                                  <h5 class="mb-0"> <p class="text-dark d-inline-block align-middle"> <%= item.item.name %> <br> 
+                                  <small><%= item.item.description %></small><br /></p></h5>
+                                </div>
+                              </div>
+                            </th>
+                            <td class="border-0 align-middle col-5" style="min-width: 9rem"><strong><%= item.item.price %>€<br /></strong></td>
+                          
+                          
+                          </tr>
+                          
+                          <%end%>
+                          <td colspan="2"><% total = 0 %>
+                          <% @order_items.each do |item|%>
+                          <% total = item.item.price + total %>
+                <%end%>
+                          <strong>TOTAL : <%= total%> €</strong>
+                          </td>
+                          
+</tbody>
+                          
+                 <%end%> 
+                
+              
+            </table>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

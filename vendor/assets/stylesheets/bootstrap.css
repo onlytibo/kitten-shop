@@ -55,6 +55,13 @@
     max-height: 110px;
     margin-bottom: 1rem;
 }
+.thumb-profil {
+  object-fit: cover;
+    object-position: center;
+    max-height: 50px;
+    margin-bottom: 1rem;
+}
+
 
 html {
   font-family: sans-serif;
