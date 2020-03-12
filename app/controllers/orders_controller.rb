@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   def create
     # on créer une order
     @order = Order.new(user:current_user)
-    @cart = Cart.where(user_id: current_user.id)
+    @cart = Cart.find_by(user_id: current_user.id)
     id = params[:user_id]
 
     charge_error = nil
@@ -21,7 +21,8 @@ class OrdersController < ApplicationController
     @cart_items.each do |c|
       @order_item = OrderItem.create(order:@order,item:c.item)
     end
-
+    @order_items = OrderItem.where(order_id:@order)
+    
     @cart = Cart.where(user_id:id)
     @amount = @order.total_amount_order(@cart_items)
     @amount = @amount.to_i
@@ -38,6 +39,7 @@ class OrdersController < ApplicationController
 
     unless @order_item.nil?
       if @order.save
+        @cart_items.destroy_all
         puts "ORDER CREATED"
         flash[:confirm_order] = "Merci ta commande a bien été prise en compte"
         @confirm_order = "Merci ta commande a bien été prise en compte"

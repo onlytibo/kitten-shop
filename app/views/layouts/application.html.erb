@@ -41,12 +41,13 @@
 
               <%= link_to "Edit email / password", edit_user_registration_path %>
           </li>
-        </ul>
           <li class="nav-item">
             <%= link_to user_cart_path(user_id: current_user.id, id: Cart.where(user_id: current_user.id).last), class: "nav-link" do %>
               <i class="fas fa-shopping-cart mr-2"></i>
-              Panier
+              Panier <%= render 'cart_items/num_items_in_cart' %>
           </li>
+        </ul>
+          
         <% end %>
       </div>
         <% else %>

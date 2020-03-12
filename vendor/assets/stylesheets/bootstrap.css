@@ -41,6 +41,21 @@
   box-sizing: border-box;
 }
 
+.thumb-post {
+  object-fit: cover;
+    object-position: center;
+    width: 100%;
+    max-height: 191px;
+    margin-bottom: 1rem;
+}
+
+.thumb-cart {
+  object-fit: cover;
+    object-position: center;
+    max-height: 110px;
+    margin-bottom: 1rem;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

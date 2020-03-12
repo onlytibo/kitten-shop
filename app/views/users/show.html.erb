@@ -50,11 +50,11 @@
 <% @user_order.each do |order| %>
 <hr>
   <%= order.created_at %><br>
-  <% @order_items = OrderItem.where(order_id:order.id) %>
-  <% @order_items.each do |item|%>
-    <%= item.item.name %><br>
-    <%= item.item.description %><br>
-    <%= item.item.price %><br>
+    <% @order_items = OrderItem.where(order_id:order.id) %>
+    <% @order_items.each do |item|%>
+      <%= item.item.name %><br>
+      <%= item.item.description %><br>
+      <%= item.item.price %><br>
   <%end%>
 
 <%end%>
