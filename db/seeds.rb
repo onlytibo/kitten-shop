@@ -26,7 +26,7 @@ User.create(
 puts "User 2"
 #admin
 User.create(
-  email: "useradmin@gmail.com",
+  email: "useradmin@yopmail.com",
   password: "123456",
   first_name: "AD",
   last_name: "MIN",

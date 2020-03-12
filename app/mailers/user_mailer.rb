@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     @url  = 'http://monsite.fr/login'
 
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to: order.user.email, subject: "Kitty Kat cmd N°#{@order.id}")
+    mail(to: order.user.email, subject: "Your order N°#{@order.id}, Kitten shop ")
   end
 
   def admin_email(order)

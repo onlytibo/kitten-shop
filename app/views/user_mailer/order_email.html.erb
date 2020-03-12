@@ -4,13 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut à toi <%= @order.user.first_name %> et merci d'avoir passé une commande sur Kitten-Shop !</h1>
     <h2>Voici un résumé de ta commande n° <%= @order.id %> : </h2>
-      Voici :
-      <%= @order_items.name %>
-      <%= @order.order_items.each do |item| %>
-        <%= item.name %>
-      <% end %>
-    <p>Pour accéder à ton espace client, connecte-toi via : lul.</p>
+    <p>Salut à toi <%= @order.user.first_name %> et merci d'avoir passé une commande sur Kitten-Shop !</p>
+    <br>
+    <p>Pour accéder au détail de ta commande, va sur ton profil :
+    <a href="https://kitten-shop-thp.herokuapp.com/users/sign_in">Kitten_shop</a></p>
+    <br>
+    <h1>KITTEN_SHOP_2020</h1>
   </body>
 </html>
