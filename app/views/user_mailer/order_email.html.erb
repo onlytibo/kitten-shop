@@ -7,7 +7,46 @@
     <h2>Voici un résumé de ta commande n° <%= @order.id %> : </h2>
     <p>Salut à toi <%= @order.user.first_name %> et merci d'avoir passé une commande sur Kitten-Shop !</p>
     <br>
-    <p>Pour accéder au détail de ta commande, va sur ton profil :
+    <p>Voici tes achats :
+    <%= @order_items %>
+    <%= @order_items[0] %>
+    <%= @order_items.to_a %>
+  <% @items = OrderItem.where(order_id:@order) %>
+  <%=@items.length%>
+  <%=@items[0]%>
+
+<% @items2 = OrderItem.where(order_id:@order.id) %>
+  <%=@items2.length%>
+  <%=@items2[0]%>
+
+    <% @order_items.each do |i| %>
+      <%= i %>
+      <%= i.items.img_link %>
+      <%= i.items.name %>
+
+      <%end%>
+
+<br>
+1. <%= @order.order_items %><br>
+2. <%= @order.order_items.first %><br>
+3. <%= @order.order_items.inspect %><br>
+4. <%= @order.user_id %><br>
+<% @i = OrderItem.where(order:@order) %>
+5. <%= @i.first %><br>
+
+
+
+
+
+      <ul>
+
+      <% @order.order_items.each do |order_item| %>
+        <li>
+          <h3><%= order_item.items.name %></h3>
+          <p><%= order_item.itemse.description %></p>
+        </li>
+      <% end %>
+    </ul>
     <a href="https://kitten-shop-thp.herokuapp.com/users/sign_in">Kitten_shop</a></p>
     <br>
     <h1>KITTEN_SHOP_2020</h1>
