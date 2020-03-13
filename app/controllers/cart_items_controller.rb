@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-  before_create :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     
